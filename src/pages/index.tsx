@@ -9,6 +9,13 @@ export default props => {
     new Client('c', 5, '4'),
     new Client('d', 40, '5'),
   ]
+
+  function selectedClient(client:Client){
+    console.log(client.name)
+  }
+  function removedClient(client:Client){
+    console.log(client.name)
+  }
   return (
     <div className={`
     flex justify-center items-center h-screen 
@@ -16,7 +23,9 @@ export default props => {
     text-white`}>
 
       <Layout title="Simple crud">
-        <Table clients={clients}></Table>
+        <Table clients={clients} 
+        selectedClient={selectedClient}
+        removedClient={removedClient}></Table>
       </Layout>
       
     </div>
