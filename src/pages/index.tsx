@@ -1,5 +1,6 @@
 import Layout from "../components/Layout"
 import Table from "../components/Table"
+import Form from "../components/Form"
 import Client from "../core/Client"
 import Button from "../components/Button"
 export default props => {
@@ -27,9 +28,10 @@ export default props => {
         <div className={`flex justify-end`}>
           <Button>New Client</Button>
         </div>
-        <Table clients={clients} 
+        <Form client={clients[3]}/>
+        {/* <Table clients={clients} 
         selectedClient={selectedClient}
-        removedClient={removedClient}></Table>
+        removedClient={removedClient}></Table> */}
       </Layout>
       
     </div>
