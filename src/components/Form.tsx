@@ -4,6 +4,8 @@ import Button from "./Button"
 import Client from "../core/Client"
 interface FormProps {
     client: Client
+    clientChanged?: (client:Client) => void
+    canceled?: () => void 
 }
 const Form = (props: FormProps) => {
     const id = props.client?.id
@@ -34,10 +36,12 @@ const Form = (props: FormProps) => {
 
             <div className={`flex justify-end mt-3`}>
                 <Button
+                onClick={() => props.clientChanged?.(new Client(name, +age, id))}
                 className={`mr-2`}>
                 {id ? 'Edit' : 'Save'}
                 </Button>
                 <Button 
+                onClick={props.canceled}
                 >
                     Cancel
                 </Button>
