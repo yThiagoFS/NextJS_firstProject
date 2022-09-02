@@ -1,6 +1,7 @@
 import Layout from "../components/Layout"
 import Table from "../components/Table"
 import Client from "../core/Client"
+import Button from "../components/Button"
 export default props => {
   const clients = [
     new Client('Zé', 34, '1'),
@@ -23,6 +24,9 @@ export default props => {
     text-white`}>
 
       <Layout title="Simple crud">
+        <div className={`flex justify-end`}>
+          <Button>New Client</Button>
+        </div>
         <Table clients={clients} 
         selectedClient={selectedClient}
         removedClient={removedClient}></Table>
